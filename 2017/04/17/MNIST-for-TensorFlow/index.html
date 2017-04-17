@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hello world, first step#文章关键词，多个关键词用英文逗号隔开" />
+  <meta name="keywords" content="TensorFlow , MNIST" />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="这里是张超贺，终于搭建好了博客雏形。 希望能坚持下去吧。 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Genera">
-<meta name="keywords" content="Hexo#标签，格式可以是[Hexo,总结]，中间用英文逗号分开">
+<meta name="description" content="当我们开始学习编程的时候，第一件事往往是学习打印&amp;quot;Hello World&amp;quot;。就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日">
+<meta name="keywords" content="TensorFlow,Machine Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://choczhang.github.io/2017/04/17/hello-world/index.html">
+<meta property="og:title" content="MNIST for TensorFlow">
+<meta property="og:url" content="https://choczhang.github.io/2017/04/17/MNIST-for-TensorFlow/index.html">
 <meta property="og:site_name" content="爱上一场认真的消遣。">
-<meta property="og:description" content="这里是张超贺，终于搭建好了博客雏形。 希望能坚持下去吧。 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Genera">
-<meta property="og:updated_time" content="2017-04-17T11:25:47.000Z">
+<meta property="og:description" content="当我们开始学习编程的时候，第一件事往往是学习打印&amp;quot;Hello World&amp;quot;。就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日">
+<meta property="og:updated_time" content="2017-04-17T11:46:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="这里是张超贺，终于搭建好了博客雏形。 希望能坚持下去吧。 Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Genera">
+<meta name="twitter:title" content="MNIST for TensorFlow">
+<meta name="twitter:description" content="当我们开始学习编程的时候，第一件事往往是学习打印&amp;quot;Hello World&amp;quot;。就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://choczhang.github.io/2017/04/17/hello-world/"/>
+  <link rel="canonical" href="https://choczhang.github.io/2017/04/17/MNIST-for-TensorFlow/"/>
 
 
 
 
 
-  <title> Hello World | 爱上一场认真的消遣。 </title>
+  <title> MNIST for TensorFlow | 爱上一场认真的消遣。 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +299,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://choczhang.github.io/2017/04/17/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://choczhang.github.io/2017/04/17/MNIST-for-TensorFlow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Neil Zhang">
@@ -320,7 +320,7 @@
             
             
               
-                Hello World
+                MNIST for TensorFlow
               
             
           </h1>
@@ -358,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow</span>
                   </a>
                 </span>
 
@@ -375,7 +375,7 @@
 
           
           
-             <span id="/2017/04/17/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/04/17/MNIST-for-TensorFlow/" class="leancloud_visitors" data-flag-title="MNIST for TensorFlow">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,16 +404,20 @@
       
 
       
-        <pre><code>这里是张超贺，终于搭建好了博客雏形。
-</code></pre><p>希望能坚持下去吧。</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <pre><code>当我们开始学习编程的时候，第一件事往往是学习打印&quot;Hello World&quot;。就好比编程入门有Hello World，机器学习入门有MNIST。
+</code></pre><h2 id="1-What-is-MNIST"><a href="#1-What-is-MNIST" class="headerlink" title="1.What is MNIST?"></a>1.What is MNIST?</h2><pre><code>MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日后继续完善具体内容。
+</code></pre><h2 id="2-Code"><a href="#2-Code" class="headerlink" title="2.Code"></a>2.Code</h2><pre><code>以下代码在python 2.7，TensorFlow &apos;1.0.1&apos;版本中运行。
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</div><div class="line"><span class="comment">#导入数据</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mnist = input_data.read_data_sets(<span class="string">"MINST_data/"</span>,one_hot = <span class="keyword">True</span>)</div><div class="line"><span class="comment">#将Mnist训练集导入进来，进行独热编码，分为10类</span></div><div class="line">sess = tf.InteractiveSession()</div><div class="line"><span class="comment">#创建TensorFlow的默认session，运算在session里跑，不同session的运算和数据相互独立</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(mnist.train.images.shape,mnist.train.labels.shape)</div><div class="line">print(mnist.test.images.shape,mnist.test.labels.shape)</div><div class="line">print(mnist.validation.images.shape,mnist.validation.labels.shape)</div><div class="line"><span class="comment">#查看数据大小，模型</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = tf.placeholder(tf.float32,[<span class="keyword">None</span>,<span class="number">784</span>])</div><div class="line"><span class="comment">#创建Placeholder 即输入数据的地方，第一个参数是数据类型，第二个是数据的shape</span></div><div class="line"><span class="comment">#也就是数据的尺寸，None表示不知道输入数目有多少条，784表示代表每一条是784维的向量</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">w=tf.Variable(tf.zeros([<span class="number">784</span>,<span class="number">10</span>]))</div><div class="line"><span class="comment">#给权重W和偏置b创建变量，variable是储存模型中的参数的。存储数据的Tensor一用就会消失掉，而variable</span></div><div class="line"><span class="comment">#是可以一直存储的参数。784是维数，10是代表分为10类</span></div><div class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</div><div class="line"><span class="comment">#同理</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">y = tf.nn.softmax(tf.matmul(x,w)+b)</div><div class="line"><span class="comment">#实现softmax回归算法，y=softmax（wx+b），matmul是矩阵乘法</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">y_ = tf.placeholder(tf.float32,[<span class="keyword">None</span>,<span class="number">10</span>])</div><div class="line"><span class="comment">#创建y的真实值的变量，10代表10位独热编码</span></div><div class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ *tf.log(y),reduction_indices = [<span class="number">1</span>]))</div><div class="line"><span class="comment">#定义损失函数位 交叉熵 函数，tf.reduce_sum是求和，tf.reduce_mean是求均值.</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.5</span>).minimize(cross_entropy)</div><div class="line"><span class="comment">#定义优化器，直接设置优化器为GradientDescentOptimizer，即梯度下降，学习率为0.5，优化函数是使得 交叉熵 函数取得最小值.</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tf.global_variables_initializer().run()</div><div class="line"><span class="comment">#初始化所有参数</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</div><div class="line">    <span class="comment">#进行1000个 epoch</span></div><div class="line">  batch_xs, batch_ys = mnist.train.next_batch(<span class="number">100</span>)</div><div class="line"><span class="comment">#在每个epoch中随机抽取100个作为输入训练集</span></div><div class="line">  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)</div><div class="line">    <span class="comment">#将所抽取的feed给placeholder，然后用train_step进行训练</span></div><div class="line"><span class="comment">#如果每次都用全部样本的话，计算量过大，有时候也不容易跳出局部最优解，</span></div><div class="line"><span class="comment">#因此，对于大部分问题，都是选取一小部分进行训练，这种方式收敛速度也会加快很多</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">correct_prediction = tf.equal(tf.argmax(y,<span class="number">1</span>),tf.argmax(y_,<span class="number">1</span>))</div><div class="line"><span class="comment">#训练完成，对结果进行评估， tf.argmax是选取最大的数值，因为我们算出来的都是对应各个数字的概率</span></div><div class="line"><span class="comment">#比如1是20%，2是10%，3是60%，。。。3是最大的概率，所以我们预测这个数值是3，同理后一项就是从独热编码找出测试机的正确解</span></div><div class="line"></div><div class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))</div><div class="line"><span class="comment">#然后将预测结果转化为浮点数，并求平均值</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> sess.run(accuracy, feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels&#125;)</div><div class="line"><span class="comment">#输出预测结果，完成。</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -443,7 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo-标签，格式可以是-Hexo-总结-，中间用英文逗号分开/" rel="tag"># Hexo#标签，格式可以是[Hexo,总结]，中间用英文逗号分开</a>
+            <a href="/tags/TensorFlow-Machine-Learning/" rel="tag"># TensorFlow,Machine Learning</a>
           
         </div>
       
@@ -456,15 +460,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/MNIST-for-TensorFlow/" rel="next" title="MNIST for TensorFlow">
-                <i class="fa fa-chevron-left"></i> MNIST for TensorFlow
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/17/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -631,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-What-is-MNIST"><span class="nav-number">1.</span> <span class="nav-text">1.What is MNIST?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Code"><span class="nav-number">2.</span> <span class="nav-text">2.Code</span></a></li></ol></div>
             
 
           </div>

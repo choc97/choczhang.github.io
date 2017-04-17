@@ -460,6 +460,179 @@ More info: Deployment
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://choczhang.github.io/2017/04/17/MNIST-for-TensorFlow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Neil Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/0.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爱上一场认真的消遣。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/17/MNIST-for-TensorFlow/" itemprop="url">
+                  MNIST for TensorFlow
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-17T19:24:44+08:00">
+                2017-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/17/MNIST-for-TensorFlow/" class="leancloud_visitors" data-flag-title="MNIST for TensorFlow">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">访问次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          当我们开始学习编程的时候，第一件事往往是学习打印&quot;Hello World&quot;。就好比编程入门有Hello World，机器学习入门有MNIST。
+1.What is MNIST?MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日后继续完善具体内容。
+2.Code以下代码在python 2.7，TensorFlow &apos;1.0.1&apos;版本中运行。
+123import tensorflow as tffrom tensorflow.examples.tutorials.mnist import input_data#导入数据
+1234mnist = input_data.read_data_sets("MINST_data/",one_hot = True)#将Mnist训练集导入进来，进行独热编码，分为10类sess = tf.InteractiveSession()#创建TensorFlow的默认session，运算在session里跑，不同session的运算和数据相互独立
+1234print(mnist.train.images.shape,mnist.train.labels.shape)print(mnist.test.images.shape,mnist.test.labels.shape)print(mnist.validation.images.shape,mnist.validation.labels.shape)#查看数据大小，模型
+123x = tf.placeholder(tf.float32,[None,784])#创建Placeholder 即输入数据的地方，第一个参数是数据类型，第二个是数据的shape#也就是数据的尺寸，None表示不知道输入数目有多少条，784表示代表每一条是784维的向量
+12345w=tf.Variable(tf.zeros([784,10]))#给权重W和偏置b创建变量，variable是储存模型中的参数的。存储数据的Tensor一用就会消失掉，而variable#是可以一直存储的参数。784是维数，10是代表分为10类b = tf.Variable(tf.zeros([10]))#同理
+12y = tf.nn.softmax(tf.matmul(x,w)+b)#实现softmax回归算法，y=softmax（wx+b），matmul是矩阵乘法
+1234y_ = tf.placeholder(tf.float32,[None,10])#创建y的真实值的变量，10代表10位独热编码cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ *tf.log(y),reduction_indices = [1]))#定义损失函数位 交叉熵 函数，tf.reduce_sum是求和，tf.reduce_mean是求均值.
+12train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)#定义优化器，直接设置优化器为GradientDescentOptimizer，即梯度下降，学习率为0.5，优化函数是使得 交叉熵 函数取得最小值.
+12tf.global_variables_initializer().run()#初始化所有参数
+12345678for i in range(1000):    #进行1000个 epoch  batch_xs, batch_ys = mnist.train.next_batch(100)#在每个epoch中随机抽取100个作为输入训练集  sess.run(train_step, feed_dict=&#123;x: batch_xs, y_: batch_ys&#125;)    #将所抽取的feed给placeholder，然后用train_step进行训练#如果每次都用全部样本的话，计算量过大，有时候也不容易跳出局部最优解，#因此，对于大部分问题，都是选取一小部分进行训练，这种方式收敛速度也会加快很多
+123456789correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(y_,1))#训练完成，对结果进行评估， tf.argmax是选取最大的数值，因为我们算出来的都是对应各个数字的概率#比如1是20%，2是10%，3是60%，。。。3是最大的概率，所以我们预测这个数值是3，同理
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/17/MNIST-for-TensorFlow/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -505,7 +678,7 @@ More info: Deployment
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -516,7 +689,7 @@ More info: Deployment
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -527,7 +700,7 @@ More info: Deployment
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
