@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。  就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。  在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日后继">
+<meta name="description" content="第一篇就发个炒鸡基础的吧，熟悉熟悉格式啥的。  当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。  就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。  在最初，我们将训练一个机器学习模型用于预测">
 <meta name="keywords" content="TensorFlow , Machine Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MNIST for TensorFlow">
 <meta property="og:url" content="https://choczhang.github.io/2017/04/17/MNIST-for-TensorFlow/index.html">
 <meta property="og:site_name" content="爱上一场认真的消遣。">
-<meta property="og:description" content="当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。  就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。  在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日后继">
-<meta property="og:updated_time" content="2017-04-17T13:52:44.000Z">
+<meta property="og:description" content="第一篇就发个炒鸡基础的吧，熟悉熟悉格式啥的。  当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。  就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。  在最初，我们将训练一个机器学习模型用于预测">
+<meta property="og:updated_time" content="2017-04-17T14:08:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MNIST for TensorFlow">
-<meta name="twitter:description" content="当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。  就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。  在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日后继">
+<meta name="twitter:description" content="第一篇就发个炒鸡基础的吧，熟悉熟悉格式啥的。  当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。  就好比编程入门有Hello World，机器学习入门有MNIST。 1.What is MNIST?  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。  在最初，我们将训练一个机器学习模型用于预测">
 
 
 
@@ -404,10 +404,10 @@
       
 
       
-        <p>  当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。<br>  就好比编程入门有Hello World，机器学习入门有MNIST。</p>
+        <p>  第一篇就发个炒鸡基础的吧，熟悉熟悉格式啥的。<br>  当我们开始学习编程的时候，第一件事往往是学习打印”Hello World”。<br>  就好比编程入门有Hello World，机器学习入门有MNIST。</p>
 <h2 id="1-What-is-MNIST"><a href="#1-What-is-MNIST" class="headerlink" title="1.What is MNIST?"></a>1.What is MNIST?</h2><p>  MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片.它也包含每一张图片对应的标签，告诉我们这个是数字几。<br>  在最初，我们将训练一个机器学习模型用于预测图片里面的数字。这里我直接把注释代码上传，日后继续完善具体内容。</p>
-<h2 id="2-Code"><a href="#2-Code" class="headerlink" title="2.Code"></a>2.Code</h2><pre><code>以下代码在python 2.7，TensorFlow &apos;1.0.1&apos;版本中运行。
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</div><div class="line"><span class="comment">#导入数据</span></div></pre></td></tr></table></figure>
+<h2 id="2-Code"><a href="#2-Code" class="headerlink" title="2.Code"></a>2.Code</h2><p>  以下代码在python 2.7，TensorFlow ‘1.0.1’版本中运行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</div><div class="line"><span class="comment">#导入数据</span></div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mnist = input_data.read_data_sets(<span class="string">"MINST_data/"</span>,one_hot = <span class="keyword">True</span>)</div><div class="line"><span class="comment">#将Mnist训练集导入进来，进行独热编码，分为10类</span></div><div class="line">sess = tf.InteractiveSession()</div><div class="line"><span class="comment">#创建TensorFlow的默认session，运算在session里跑，不同session的运算和数据相互独立</span></div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(mnist.train.images.shape,mnist.train.labels.shape)</div><div class="line">print(mnist.test.images.shape,mnist.test.labels.shape)</div><div class="line">print(mnist.validation.images.shape,mnist.validation.labels.shape)</div><div class="line"><span class="comment">#查看数据大小，模型</span></div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = tf.placeholder(tf.float32,[<span class="keyword">None</span>,<span class="number">784</span>])</div><div class="line"><span class="comment">#创建Placeholder 即输入数据的地方，第一个参数是数据类型，第二个是数据的shape</span></div><div class="line"><span class="comment">#也就是数据的尺寸，None表示不知道输入数目有多少条，784表示代表每一条是784维的向量</span></div></pre></td></tr></table></figure>
